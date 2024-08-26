@@ -7,6 +7,12 @@
 // Composables
 import { createRouter, createWebHistory } from 'vue-router/auto'
 import { routes } from 'vue-router/auto-routes'
+import CrudCategoria from '@/components/CrudCategoria.vue'
+import CrudProduto from '@/components/CrudProduto.vue';
+
+routes.push({ path: '/', redirect: { path: "/produtos" }});
+routes.push({ path: '/categoria/:id', component: CrudCategoria });
+routes.push({ path: '/produto/:id', component: CrudProduto });
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
